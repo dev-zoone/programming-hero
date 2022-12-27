@@ -1,0 +1,233 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mobile Shop</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            
+            * {
+                margin: 0;
+                padding: 0;
+                outline: none;
+                border: none;
+                box-sizing:border-box;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .container {
+                width: 90vw;
+                height: 90vh;
+                background: #0E2F44;
+                border-radius: 0.5rem;
+                margin: 1.7rem auto;
+            }
+            .container__content {
+                height: 100%;
+                display: flex;
+                /* background: #FF6666; */
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem; 
+            }
+            .container__content__card-1 {
+                width: 90%;
+                height: 25%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: #FF6666;
+                border-radius: 0.25rem;
+                padding: 0 3rem;
+            }
+            .extra-power {
+                padding: 0 4rem;
+            }
+            .container__content__card-1 .iphone-14 {
+                width: 100px;
+                height: 100px;
+                position: center;
+                background: none !important;
+                border-radius: 5px !important;
+            }
+            .icons [type="text"] {
+                width: 3rem;
+                margin: 0 0.5rem;
+                padding: 0.5rem;
+                text-align: center;
+                border-radius: 0.25rem;
+            }
+            [type="submit"] {
+                padding: 0.5rem;
+                background: none;
+            }
+            span {
+                padding: 0.5rem 1rem;
+            }
+            .output {
+                width: 5rem !important;
+                background: none;
+            }
+            ::placeholder {
+                color: black;
+            }
+            p {
+                font-size: 1rem;
+                margin: 0.2rem;
+            }
+            [type="button"] {
+                background: none;
+                font-size: 1rem;
+                margin: 0.2rem;
+            }
+        </style>
+    </head>
+    <body onload="sumIsTotal()">
+        <div class="container">
+            <div class="container__content">
+                <div class="container__content__card-1">
+                    <img src="./image/ipnone-13.jpg" alt="" class="iphone-14"> 
+                    <p class="title">iPhone 14 28BG Black</p>
+                    <div class="icons">
+                        <button onclick="handaleProductChange('phone', false)" id="phone-minus" type="submit"><i class="fa-solid fa-minus"></i></button>
+                        <input id="phone-count" type="text" value="1">
+                        <button onclick="handaleProductChange('phone', true)" id="phone-incrase" type="submit"><i class="fa-solid fa-plus"></i></button>
+                        <!-- <span id="phone-total">$1224</span> -->
+                        <input type="text" id="phone-total" class="output" placeholder="$1224">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="container__content__card-1">
+                    <img src="./image/ipnone-13.jpg" alt="" class="iphone-14"> 
+                    <p class="title">iPhone 14 228BG Black Case</p>
+                    <div class="icons">
+                        <button onclick="handaleProductChange('case', false)" id="case-minus" type="submit"><i class="fa-solid fa-minus"></i></button>
+                        <input id="case-count" type="text" value="1">
+                        <button onclick="handaleProductChange('case', true)" id="case-incrase" type="submit"><i class="fa-solid fa-plus"></i></button>
+                        <!-- <span id="case-total">$59</span> -->
+                        <input type="text" id="case-total" class="output" placeholder="$59">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="container__content__card-1 extra-power">
+                    <!-- <img src="../image/ipnone-13.jpg" alt="" class="iphone-14">  -->
+                    <!-- <p class="title">iPhone 14 228BG Black</p> -->
+                    <div>
+                        <p>Subtotal</p>
+                        <p>Tax</p>
+                        <p>Total</p>
+                    </div>
+                    <div class="need-amounts">
+                        <button id="sub-total" type="button">$1283</button><br>
+                        <button id="tax" type="button">$128</button><br>
+                        <button id="total" type="button">$1411</button><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="container">
+            <img src="../image/my-bg.png" alt="">
+        </div> -->
+        
+        <script>
+            // Change The Product Quentty //
+            
+            function handaleProductChange(product, isInCrease){
+                const productInput = document.getElementById(product + '-count');
+                const productCount = parseInt(productInput.value);
+                // const phoneNewCount = phoneCount - 1;
+                let productNewCount = productCount;
+                if(isInCrease == true) {
+                    productNewCount = productCount + 1;
+                }
+                if(isInCrease == false && productCount > 0) {
+                    productNewCount = productCount - 1;
+                }
+                productInput.value = productNewCount;
+                // const productTotal = productNewCount * 1224;
+                let productTotal = productNewCount;
+                if(product == 'phone') {
+                    productTotal = productNewCount * 1224;
+                }
+                if(product == 'case') {
+                    productTotal = productNewCount * 59;
+                }
+                document.getElementById(product + '-total').value = '$' + productTotal;
+
+                getCalculateTotal()
+            }
+
+            function getCalculateTotal(){
+                const phoneInput = document.getElementById('phone-count');
+                const phoneTotal = parseInt(phoneInput.value);
+                const phoneNewCount = phoneTotal * 1224;
+
+                const caseInput = document.getElementById('case-count');
+                const caseTotal = parseInt(caseInput.value);
+                const caseNewCount = caseTotal * 59;
+
+                const subTotal = phoneNewCount + caseNewCount;
+                document.getElementById('sub-total').innerText = '$' + subTotal;
+
+                const taxTotal = Math.round(subTotal * 0.1);
+                document.getElementById('tax').innerText = '$' + taxTotal;
+
+                const sumIsTotal = subTotal + taxTotal;
+                document.getElementById('total').innerText = '$' + sumIsTotal; 
+            }
+
+            // change the product in phone //
+
+            // document.getElementById('phone-incrase').addEventListener('click', function(){
+            //     handalePhoneChange(true)
+            // });
+            // document.getElementById('phone-minus').addEventListener('click', function(){
+            //     handalePhoneChange(false);
+            // });
+
+            // function handalePhoneChange(isPhoneCrease){
+            //     const phoneInput = document.getElementById('phone-count');
+            //     const phoneCount = parseInt(phoneInput.value);
+            //     // const phoneNewCount = phoneCount - 1;
+            //     let phoneNewCount = phoneCount;
+            //     if(isPhoneCrease == true) {
+            //         phoneNewCount = phoneCount + 1;
+            //     }
+            //     if(isPhoneCrease == false && phoneCount > 0) {
+            //         phoneNewCount = phoneCount - 1;
+            //     }
+            //     phoneInput.value = phoneNewCount;
+            //     const phoneTotal = phoneNewCount * 1224;
+            //     document.getElementById('phone-total').value = '$' + phoneTotal;
+            // }
+
+            // change the product in case //
+
+            // document.getElementById('case-incrase').addEventListener('click', function(){
+            //     handaleCaseChange(true);
+            // });
+            // document.getElementById('case-minus').addEventListener('click', function(){
+            //     handaleCaseChange(false);
+            // });
+
+            // function handaleCaseChange(isCaseCrease){
+            //     const caseInput = document.getElementById('case-count');
+            //     const caseCount = parseInt(caseInput.value);
+            //     // const caseNewCount = caseCount - 1;
+            //     let caseNewCount = caseCount;
+            //     if(isCaseCrease == true) {
+            //        caseNewCount= caseCount + 1;
+            //     }
+            //     if(isCaseCrease == false && caseCount > 0) {
+            //         caseNewCount = caseCount - 1;
+            //     }
+            //     caseInput.value = caseNewCount;
+            //     const caseTotal = caseNewCount * 59;
+            //     document.getElementById('case-total').value = '$' + caseTotal;
+            // }
+        </script>
+    </body>
+    </html>
