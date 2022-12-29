@@ -28,8 +28,10 @@ depositAmount.addEventListener('click', function() {
     // const totalAmount = depositNumber + currentDepositNumber;
     // document.getElementById('currentDeposit').innerText = totalAmount;
 
-    updateSpanText('currentDeposit', depositNumber);
-    updateSpanText('currentBalance', depositNumber);
+    if(depositAmount > 0) {
+        updateSpanText('currentDeposit', depositNumber);
+        updateSpanText('currentBalance', depositNumber);
+    }
 
     document.getElementById('depositAmount').value = "";
 });
@@ -53,8 +55,10 @@ withdrawAmount.addEventListener('click', function() {
     // const totalWithdraw = withdrawAmountNumber + withdrawValueNumber;
     // document.getElementById('withdrawValue').innerText = totalWithdraw;
 
-    updateSpanValue('withdrawValue', withdrawAmountNumber);
-    updateSpanValue('currentBalance', withdrawAmountNumber);
+    if(withdrawAmount > 0) {
+        updateSpanValue('withdrawValue', withdrawAmountNumber);
+        updateSpanValue('currentBalance', withdrawAmountNumber);
+    }
 
     document.getElementById('withdrawAmount').value = "";
 });
@@ -62,7 +66,7 @@ withdrawAmount.addEventListener('click', function() {
 function updateSpanValue(id, withdrawAmountNumber) {
     const current = document.getElementById(id).innerText;
     const currentNumber = parseFloat(current);
-    const totalAmount = currentNumber + withdrawAmountNumber;
+    const totalAmount = currentNumber - withdrawAmountNumber;
 
     document.getElementById(id).innerText = totalAmount;
 }
