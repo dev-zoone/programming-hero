@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: roboto, arial, sans-serif;
+    font-weight: bold;
+    outline: none;
+}
+
+body {
+    padding: 100px 200px;
+}
+
+#submit-area {
+    margin-top: 50px;
+    padding: 1rem;
+    border-radius: 10px;
+    /* border: 1px solid #ccc; */
+    box-shadow: 0.5rem 5px 10px gray;
+}
+
+button {
+    padding: 0.5rem 2rem !important;
+}
+
+#transiction-area {
+    display: none;
+}
+
+.status {
+    color: #fff;
+    padding: 2rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.deposit {
+    background: lightblue;
+}
+
+.withdraw {
+    background: lightcoral;
+}
+
+.balance {
+    background: lightgreen;
+}
+
+.transition {
+    display: flex;
+    justify-content: space-between;
+}
+
+.help-desk {
+    width: 48%;
+    height: 200px;
+    margin: 3rem 0.5rem;
+    padding: 2rem 1rem;
+    border-radius: 0.5rem;
+    box-sizing: border-box !important;
+    box-shadow: 3px 3px 10px gray;
+}
+
+.help-desk>input {
+    width: 100%;
+    padding: 0.3rem;
+    font-size: 0.9rem;
+    font-weight: 100;
+    border-radius: 0.25rem;
+    border: 0.1rem solid #CED4DA;
+}
