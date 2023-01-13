@@ -10,21 +10,25 @@
 <body>
     <div class="container">
         <!-- navigetion bar start -->
-        <nav class="container__nav-bar">
-            <div class="container__nav-bar__logo">
-                <img src="./images/icons/Vector.png" alt="">
-            </div>
-            <!-- navigetion menu start -->
-            <div class="container__nav-bar__menu">
-                <ul>
-                    <li><a href="">WORK</a></li>
-                    <li><a href="">ABOUT ME</a></li>
-                    <li><a href="">BLOG</a></li>
-                    <li><a href="">CONTACT</a></li>
-                </ul>
-                <button type="button">HIRE ME</button>
-            </div>
-        </nav>
+        <div class="container__header">
+            <nav class="container__header__nav-bar">
+                <div class="container__header__nav-bar__logo">
+                    <img src="./images/Vector.png" alt="" id="logo">
+                </div>
+                <!-- navigetion menu start -->
+                <div class="container__header__nav-bar__menu">
+                    <ul>
+                        <li><a href="">WORK</a></li>
+                        <li><a href="">ABOUT ME</a></li>
+                        <li><a href="">BLOG</a></li>
+                        <li><a href="">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="hire">
+                    <button type="button">HIRE ME</button>
+                </div>
+            </nav>
+        </div>
         <!-- navigetion bar end -->
         <!-- start for status-content -->
         <div class="container__content">
@@ -32,8 +36,8 @@
                 <div class="status">
                     <h4>Hello,I'm</h4>
                     <h2>Shakil Ahmad</h2>
-                    <h4>UI & UX Designer</h4>
-
+                    <h4>Front End Developer</h4>
+                    <!-- <h4>UI & UX Designer</h4> -->
                     <div class="link">
                         <img class="vector vector4" 
                         src="./images/icons/Vector (3).png" alt="">
@@ -59,7 +63,7 @@
                 </button>
                 </div>
                 <div class="status-me">
-                    <img src="./images/portrait-young-afro-businessman-wearing-shirt-black-suit-glasses-looking-front-while-standing-beige-wall_158595-7638 1.png" alt="">
+                    <!-- <img src="./images/portrait-young-afro-businessman-wearing-shirt-black-suit-glasses-looking-front-while-standing-beige-wall_158595-7638 1.png" alt=""> -->
                 </div>
             </div>
             <div class="content-professional">
@@ -68,10 +72,7 @@
             </div>
             <div class="container__content-works">
                 <div class="container__content-works__skills">
-                    <form action="">
-                        <span id="renge"></span> 
-                        <input type="text" value="90%">
-                    </form>
+                    <p class="range">90%</p>
                 </div>
                 <div class="container__content-works__short">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde dolore inventore laudantium corporis nam quis sapiente in, nostrum accusantium itaque? Mollitia magni nobis corporis sed eius sint id ipsa deleniti!

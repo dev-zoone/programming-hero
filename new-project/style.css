@@ -12,23 +12,31 @@
 
 .container {
     width: 80vw;
-    height: 1080px;
+    height: 1300px;
     margin: 2rem auto;
     background-image: url(./images/Looper\ BG.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
-.container__nav-bar {
-    width: 80%;
+.container__header {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #4F567E;
+}
+
+.container__header__nav-bar {
+    width: 68vw;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    /* background-color: #4F567E; */
 }
-.container__nav-bar__menu {
+.container__header__nav-bar__menu {
     display: flex;
     margin-right: 4rem;
 }
-.container__nav-bar__menu ul {
+.container__header__nav-bar__menu ul {
     display: flex;
     align-items: center;
     list-style: none;
@@ -38,18 +46,18 @@
 }
 ul li a {
     line-height: 24px !important;
-    color: #36353B;
+    color: #FFFF;
 }
 [type="button"] {
-    padding: 0.3rem 1rem;
+    padding: 0.3rem 2.2rem;
     border-radius: 1rem;
     font-weight: bold;
-    background: linear-gradient(225deg, #29272E 0%, #27272E 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
-    border: 0.5px solid #AFAFB0;
+    -webkit-text-fill-color: transparent;
+    border: 0.5px solid #FFFF;
+    font-size: 0.9rem;
 }
 
 h2 {
@@ -66,30 +74,35 @@ h4 {
     /* border: 1px solid; */
 }
 .container__content-status {
-    display: flex;
+    width: 70vw;
+    height: 70vh;
+    display: grid;
     align-items: center;
     justify-content: space-between;
+    grid-template-columns: 40% 60%;
 }
 .status {
     margin-bottom: 3rem;
 }
 .status-me {
-    width: 65%;
-    height: 75vh;
-    background-image: url(./images/Vector\ 2.png);
-    background-size: contain;
-    background-position: center;
+    width: 90%;
+    height: 100%;
+    margin-top: 1rem;
+    background-image: url(./images/portrait-young-afro-businessman-wearing-shirt-black-suit-glasses-looking-front-while-standing-beige-wall_158595-7638\ 1.png), url(./images/Vector\ 2.png);
+    background-size: 59%, 100%;
+    background-position: 140px 8px, top;
     background-repeat: no-repeat;
     box-sizing: border-box;
-    overflow: hidden;
+    display: block;
+    /* overflow: hidden;
+    position: relative; */
 }
-.status-me img {
-    width: 40%;
-    height: 100%;
-    margin-left: 20px;
-    transform: translate(240px, 0);
-    position: relative;
-}
+/* .status-me img {
+    width: 50%;
+    height: 80%;
+    position: absolute;
+    left: 35%;
+} */
 .vector {
     padding: 0.5rem;
     margin: 0.5rem 0;
@@ -123,21 +136,28 @@ h4 {
 .hire-me {
     padding: 0.5rem 2rem;
     background: #2B2B2D;
-    border-radius: 1rem;
+    border-radius: 2rem;
     color: #fff !important;
     border: 0.1rem solid #2B2B2D;
 }
 .resume {
     margin: 1rem 0.5rem;
     padding: 0.5rem 2rem;
-    border-radius: 1rem;
+    border-radius: 2rem;
     border: 0.1rem solid #5E5E60;
+    background: linear-gradient(225deg, #29272E 0%, #27272E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
 }
 
 .content-professional {
     width: 280px;
     height: 100px;
     text-align: center;
+    display: block;
 }
 .content-professional h3 {
     font-size: 1.5rem;
@@ -158,8 +178,19 @@ h4 {
     border-bottom-right-radius: 90%;
     border-right: none;
 }
-/* #renge {
-    width: 200px;
+.range {
+    width: 100px;
     height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
     background: #1A68F9;
-} */
+}
+.range::before {
+    content: '';
+    width: 90%;
+    height: 5px;
+    background: #000000;
+    border-radius: 100%;
+}
