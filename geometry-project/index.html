@@ -26,7 +26,7 @@
                 </p>
             </div>
             <ul>
-                <li><a href="">Blog</a></li>
+                <li><a href="./blog.html" target="_blank">Blog</a></li>
             </ul>
         </nav>
     </header>
@@ -36,74 +36,122 @@
                 <div id="card-1" class="card">
                     <img class="img-size" src="images/triangle.png" alt="">
                     <h3>Triangle</h3>
-                    <p class="area-formula">Area (A) = 0.5 * <span id="tBOutput">b</span> * <span id="tHOutput">h</span></p>
+                    <p class="area-formula">Area (A) = 0.5 *
+                        <span id="tBOutput">b</span> *
+                        <span id="tHOutput">h</span>
+                    </p>
+
                     <form action="">
                         <input type="text" id="triBase" placeholder="b"><label for="">cm</label>
-                        <input type="text" id="triHeight" placeholder="h"><label for="">cm</label>
+                        <input type="text" id="triHeight" placeholder="h">
+                        <label for="">cm</label>
                     </form>
-                    <button type="submit" id="triangle" onclick="printOutput('triBase', 'tBOutput'), printOutput('triHeight', 'tHOutput'), sumadd('triBase', 'triHeight')">Calculate</button>
+
+                    <button type="submit" id="triangle">Calculate</button>
                 </div>
+                <!-- Triangle end -->
                 <div id="card-2" class="card">
                     <img class="img-size" src="images/rectangle.png" alt="">
                     <h3>Rectangle</h3>
-                    <p class="area-formula">Area (A) = <span id="rWOutput">w</span> * <span id="rLOutput">i</span></p>
+                    <p class="area-formula">Area (A) =
+                        <span id="rWOutput">w</span> *
+                        <span id="rLOutput">i</span>
+                    </p>
+
                     <form action="">
                         <input type="text" id="recWidth" placeholder="w"><label for="">cm</label>
-                        <input type="text" id="recLength" placeholder="i"><label for="">cm</label>
+                        <input type="text" id="recLength" placeholder="i">
+                        <label for="">cm</label>
                     </form>
-                    <button type="submit" id="rectangle" onclick="printOutput('recWidth', 'rWOutput'), printOutput('recLength', 'rLOutput')">Calculate</button>
+
+                    <button type="submit" id="rectangle">Calculate</button>
                 </div>
+                <!-- Rectangle end -->
                 <div id="card-3" class="card">
                     <img class="img-size" src="images/parallelogram.png" alt="">
                     <h3>Parallelogram</h3>
-                    <p class="area-formula">Area (A) = <span id="pBOutput">b</span> * <span id="pHOutput">h</span></p>
+                    <p class="area-formula">Area (A) =
+                        <span id="pBOutput">b</span> *
+                        <span id="pHOutput">h</span>
+                    </p>
+
                     <form action="">
                         <input type="text" id="paraBase" placeholder="b"><label for="">cm</label>
-                        <input type="text" id="paraHeight" placeholder="h"><label for="">cm</label>
+                        <input type="text" id="paraHeight" placeholder="h">
+                        <label for="">cm</label>
                     </form>
-                    <button type="submit" id="parallelogram" onclick="printOutput('paraBase', 'pBOutput'), printOutput('paraHeight', 'pHOutput')">Calculate</button>
+
+                    <button type="submit" id="parallelogram">Calculate</button>
                 </div>
+                <!-- Parallelogram end -->
                 <div id="card-4" class="card">
                     <img class="img-size" src="images/rhombus.png" alt="">
                     <h3>Rhombus</h3>
-                    <p class="area-formula">Area (A) = 0.5 * <span id="rDOutput1">d<sub>1</sub></span> * <span id="rDOutput2"></span></p>
+                    <p class="area-formula">Area (A) = 0.5 *
+                        <span id="rDOutput1">d<sub>1</sub></span> * 
+                        <span id="rDOutput2">d <sub>2</sub></span>
+                    </p>
+
                     <form action="">
-                        <input type="text" id="pDiagonal" placeholder="d1"><label for="">cm</label>
-                        <input type="text" id="qDiagonal" placeholder="d2"><label for="">cm</label>
+                        <input type="text" id="pDiagonal" 
+                        placeholder="d1"><label for="">cm</label>
+                        <input type="text" id="qDiagonal" placeholder="d2">
+                        <label for="">cm</label>
                     </form>
-                    <button type="submit" id="rhombus" onclick="printOutput('pDiagonal', 'rDOutput1'), printOutput('qDiagonal', 'rDOutput2')">Calculate</button>
+
+                    <button type="submit" id="rhombus">Calculate</button>
                 </div>
+                <!-- Rhombus end -->
                 <div id="card-5" class="card">
                     <img class="img-size" src="images/pentagon.png" alt="">
                     <h3>Pentagon</h3>
-                    <p class="area-formula">Area (A) = 0.5 * <span id="pPOutput">p</span> * <span id="pBOutput">b</span></p>
+                    <p class="area-formula">Area (A) = 0.5 *
+                        <span id="pPOutput">p</span> *
+                        <span id="pBOutput">b</span>
+                    </p>
+
                     <form action="">
                         <input type="text" id="pentPremit" placeholder="p"><label for="">cm</label>
-                        <input type="text" id="pentBase" placeholder="b"><label for="">cm</label>
+                        <input type="text" id="pentBase" placeholder="b">
+                        <label for="">cm</label>
                     </form>
-                    <button type="submit" id="pentagon" onclick="printOutput('pentPremit', 'pPOutput'), printOutput('pentBase', 'pBOutput')">Calculate</button>
+
+                    <button type="submit" id="pentagon">Calculate</button>
                 </div>
+                <!-- Pentagon end -->
                 <div id="card-6" class="card">
                     <img class="img-size" src="images/ellipse.png" alt="">
                     <h3>Ellipse</h3>
-                    <p class="area-formula">Area (A) = 3.14 * <span id="eAOutput">a</span> * <span id="eBOutput">b</span></p>
+                    <p class="area-formula">Area (A) = 3.14 *
+                        <span id="eAOutput">a</span> *
+                        <span id="eBOutput">b</span>
+                    </p>
+
                     <form action="">
                         <input type="text" id="axisA" placeholder="a"><label for="">cm</label>
-                        <input type="text" id="axisB" placeholder="b"><label for="">cm</label>
+                        <input type="text" id="axisB" placeholder="b">
+                        <label for="">cm</label>
                     </form>
-                    <button type="submit" id="ellipse" onclick="printOutput('axisA', 'eAOutput'), printOutput('axisB', 'eBOutput')">Calculate</button>
+
+                    <button type="submit" id="ellipse">Calculate</button>
                 </div>
+                <!-- Ellipse end -->
             </div>
+            <!-- --------------
+                Area Calculation
+            ---------------------->
             <div class="area-calculation">
                 <div id="card" class="card">
                     <h3><u>Area Calculation</u></h3>
                     <div>
+                        <span id="all__result"></span>
+
                         <span id="printTriangle"></span>
                     </div>
                 </div>
             </div>
         </section>
-        
+
     </main>
 
     <script src="./js/index.js"></script>
